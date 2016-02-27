@@ -42,6 +42,8 @@ class RmdContainerViewController: UIViewController {
         }
     }
     
+    var mainNavigation: RmdNavigationController!
+    
     var menuShown: Bool = false
     
     private var openMenu: NSObjectProtocol?
@@ -51,15 +53,20 @@ class RmdContainerViewController: UIViewController {
         super.viewDidLoad()
         let menuViewController: RmdMenuViewController = RmdMenuViewController()
         let mvc: RmdViewController = RmdViewController()
-        let mainNavigation: RmdNavigationController = RmdNavigationController(rootViewController:mvc)
+        mainNavigation = RmdNavigationController(rootViewController:mvc)
         self.leftViewController = menuViewController
         self.rightViewController = mainNavigation
-        
         addObservers()
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        let menu = UIBarButtonItem(title: "Menu", style: .Plain, target: self, action:"touchMenu:")
+        mainNavigation.viewControllers.first?.navigationItem.leftBarButtonItems = [menu]
+    }
+    
+    func touchMenu(object:AnyObject) {
+        showMenu()
     }
     
     private func addObservers() {
@@ -68,6 +75,8 @@ class RmdContainerViewController: UIViewController {
             self.showMenu()
         }
         closeMenu = center.addObserverForName("closeMenu", object: nil, queue: nil) { (notification: NSNotification!) in
+            let menu = UIBarButtonItem(title: "Menu", style: .Plain, target: self, action:"touchMenu:")
+            self.mainNavigation.viewControllers.first?.navigationItem.leftBarButtonItems = [menu]
             self.hideMenu()
         }
     }
@@ -92,7 +101,8 @@ class RmdContainerViewController: UIViewController {
     
     func showMenu() {
         UIView.animateWithDuration(0.2, animations: {
-            self.rightViewController!.view.frame = CGRect(x: self.view.frame.origin.x + 235, y: self.view.frame.origin.y, width: self.view.frame.width, height: self.view.frame.height)
+            self.rightViewController!.view.frame = CGRect(x: self.view.frame.size.width - 64, y: self.view.frame.origin.y,
+                width: self.view.frame.width, height: self.view.frame.height)
             }, completion: { (Bool) -> Void in
                 self.menuShown = true
                 self.reloadShadow(self.rightViewController!.view)
@@ -101,7 +111,8 @@ class RmdContainerViewController: UIViewController {
     
     func hideMenu() {
         UIView.animateWithDuration(0.2, animations: {
-            self.rightViewController!.view.frame = CGRect(x: 0, y: self.view.frame.origin.y, width: self.view.frame.width, height: self.view.frame.height)
+            self.rightViewController!.view.frame = CGRect(x: 0, y: self.view.frame.origin.y,
+                width: self.view.frame.width, height: self.view.frame.height)
             }, completion: { (Bool) -> Void in
                 self.menuShown = false
         })
