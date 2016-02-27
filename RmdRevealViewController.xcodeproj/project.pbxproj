@@ -12,6 +12,10 @@
 		D81C0AC81C81960100A50239 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D81C0AC61C81960100A50239 /* Main.storyboard */; };
 		D81C0ACA1C81960100A50239 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D81C0AC91C81960100A50239 /* Assets.xcassets */; };
 		D81C0ACD1C81960100A50239 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D81C0ACB1C81960100A50239 /* LaunchScreen.storyboard */; };
+		D81C0AD51C81A11B00A50239 /* RmdContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81C0AD41C81A11B00A50239 /* RmdContainerViewController.swift */; };
+		D81C0AD71C81A14300A50239 /* RmdMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81C0AD61C81A14300A50239 /* RmdMenuViewController.swift */; };
+		D81C0AD91C81A1E900A50239 /* RmdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81C0AD81C81A1E900A50239 /* RmdViewController.swift */; };
+		D81C0ADB1C81A7B700A50239 /* RmdNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81C0ADA1C81A7B700A50239 /* RmdNavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		D81C0AC91C81960100A50239 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D81C0ACC1C81960100A50239 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D81C0ACE1C81960100A50239 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D81C0AD41C81A11B00A50239 /* RmdContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RmdContainerViewController.swift; sourceTree = "<group>"; };
+		D81C0AD61C81A14300A50239 /* RmdMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RmdMenuViewController.swift; sourceTree = "<group>"; };
+		D81C0AD81C81A1E900A50239 /* RmdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RmdViewController.swift; sourceTree = "<group>"; };
+		D81C0ADA1C81A7B700A50239 /* RmdNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RmdNavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +68,10 @@
 				D81C0AC91C81960100A50239 /* Assets.xcassets */,
 				D81C0ACB1C81960100A50239 /* LaunchScreen.storyboard */,
 				D81C0ACE1C81960100A50239 /* Info.plist */,
+				D81C0AD41C81A11B00A50239 /* RmdContainerViewController.swift */,
+				D81C0ADA1C81A7B700A50239 /* RmdNavigationController.swift */,
+				D81C0AD61C81A14300A50239 /* RmdMenuViewController.swift */,
+				D81C0AD81C81A1E900A50239 /* RmdViewController.swift */,
 			);
 			path = RmdRevealViewController;
 			sourceTree = "<group>";
@@ -135,7 +147,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D81C0AD91C81A1E900A50239 /* RmdViewController.swift in Sources */,
 				D81C0AC51C81960100A50239 /* ViewController.swift in Sources */,
+				D81C0AD71C81A14300A50239 /* RmdMenuViewController.swift in Sources */,
+				D81C0ADB1C81A7B700A50239 /* RmdNavigationController.swift in Sources */,
+				D81C0AD51C81A11B00A50239 /* RmdContainerViewController.swift in Sources */,
 				D81C0AC31C81960100A50239 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,6 +302,7 @@
 				D81C0AD31C81960100A50239 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
